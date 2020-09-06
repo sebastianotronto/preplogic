@@ -1,0 +1,123 @@
+\documentclass[a4paper,oneside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\theoremstyle{definition} \newtheorem{exercise}{Exercise}[section]
+
+\author{Sebastiano Tronto (uni.lu)}
+\title{Elementary logic exercises (Prep Camp 2020)}
+
+\begin{document}
+\maketitle
+
+\section{Logical operations}
+
+\begin{exercise}
+  Determine if the following statement are \textbf{true} or \textbf{false}:
+  \begin{enumerate}
+    \item ``Today is Tuesday or Germany has more inhabitants than Luxembourg''
+    \item ``$7$ is odd and $2+2=5$''
+    \item Every number of the form $2^{2^n}+1$, for $n=1,2,3...$, is prime.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  What is the negation of the sentence ``\emph{I payed attention in class and I
+  did not do my homework}'' ?
+\end{exercise}
+
+\begin{exercise}
+  Simplify the following logical expressions using the properties of logical
+  operations (where $A,B$ and $C$ are statements):
+  \begin{enumerate}
+    \item $A\land(A\lor B)$
+    \item $A\lor (B\land A)$
+    \item $(A\lor B) \land \neg A$
+    \item $A \lor (\neg A\land B)$
+    \item $(\neg (A\lor \neg B))\land ((A\lor C) \land \neg C)$
+  \end{enumerate}
+\end{exercise}
+
+\section{Implication}
+
+\begin{exercise}
+  Fill in the following truth table:
+  \begin{align*}
+    \begin{array}{|c|c|c|c|c|}
+      \hline
+      A & B & C & \neg(A\implies B) & (A\implies B) \implies C \\
+      \hline
+      0 & 0 & 0 & & \\
+      \hline
+      0 & 0 & 1 & & \\
+      \hline
+      0 & 1 & 0 & & \\
+      \hline
+      0 & 1 & 1 & & \\
+      \hline
+      1 & 0 & 0 & & \\
+      \hline
+      1 & 0 & 1 & & \\
+      \hline
+      1 & 1 & 0 & & \\
+      \hline
+      1 & 1 & 1 & & \\
+      \hline
+    \end{array}
+  \end{align*}
+\end{exercise}
+
+\begin{exercise}[Transitivity]
+  Prove that the following statement is true for any statements $A,B$ and $C$:
+  \begin{align*}
+    ((A\implies B)\land (B\implies C))\implies (A\implies C)
+  \end{align*}
+\end{exercise}
+
+\begin{exercise}
+What is the contrapositive of ``\emph{If this table is not reserved, we sit
+here}'' ?
+\end{exercise}
+
+\section{Quantifiers}
+
+\begin{exercise}
+  There is another quantifier that we did not cover in the lecture, namely
+  $\exists!$ (read ``there exists exactly one''). For example, the sentence
+  ``\emph{there exists exactly one natural number x such that x+2=5}'' can be
+  written in symbols as ``$\exists!x\in \mathbb N,\,x+2=5$.
+  In this exercise, your task is to give a formal definition of this quantifier
+  using the logical symbols that we have defined in class. In particular, you
+  will need the following:
+  \begin{itemize}
+    \item the universal ($\forall$) and existential ($\exists$) quantifier
+    \item the conjunction $\land$
+    \item the implication $\implies$
+  \end{itemize}
+  Moreover, you will need the equality symbol $=$ between two elements of a set
+  (if $a$ and $b$ are two elements of the same set, ``$a=b$'' is a mathematical
+  statement and it is \textbf{true} if and only if they are the same element).
+  
+  \emph{Warning: your definition must depend on a set $S$ and on a ``variable
+  statement'' $A(x)$, as the existential and universal quantifiers.}
+\end{exercise}
+
+\section{Proofs}
+
+\begin{exercise}
+  Is the following statement true or false? Give a proof of your answer.
+  \begin{align*}
+    \forall n\in \mathbb N,\, n^2 -4n +5>n
+  \end{align*}
+\end{exercise}
+
+\begin{exercise}
+  Do the last point of Exercise 1.1 again, but this time give a proof of your
+  answer.
+\end{exercise}
+
+
+
+\end{document}

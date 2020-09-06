@@ -1,0 +1,520 @@
+\documentclass[11pt]{beamer}
+\usetheme{Madrid}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{setspace}
+\author{Sebastiano Tronto}
+\title{Elementary Logic (PrepCamp)}
+%\setbeamercovered{transparent} 
+%\setbeamertemplate{navigation symbols}{} 
+\logo{\includegraphics[scale=0.065]{unilu.jpg}} 
+\institute{uni.lu} 
+\date{September 7-8, 2020} 
+%\subject{}
+
+\newtheorem {proposition}{Proposition}
+\theoremstyle{definition}
+\newtheorem {remark}{Remark}
+\newtheorem {exercise}{Exercise}
+
+
+\newcommand{\refgithub}{
+  \begin{itemize}
+    \item \textbf{These slides:}
+    \item \textbf{Exercises:}
+    \item \textbf{Contact:} \texttt{sebastiano.tronto@uni.lu}
+  \end{itemize}
+}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+  \begin{columns}
+  \column{0.5\linewidth}
+    \tableofcontents
+  \column{0.5\linewidth}
+    \refgithub
+  \end{columns}
+\end{frame}
+
+
+\section{Statements}
+\begin{frame}{Statements}
+\begin{itemize}
+    \pause
+ \item Unambiguous
+   \pause
+\begin{example}[A bad joke]
+\textbf{Q:} How many months have 30 days?
+\pause
+
+\textbf{A:} 11, some of them have even more!
+\pause
+
+:-(
+\end{example}
+\pause
+ \item Objective
+   \pause
+\begin{example}
+\textbf{Good:} 3 is greater than 4
+
+\textbf{Bad:} 3 is nicer than 4
+\end{example}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Statements}
+  \begin{itemize}
+ \item Mathematical: ``\emph{Three is greater than four}\,''
+                    (or ``$3 > 4$'')
+ \item ...or not: ``\emph{I am 26 years old}\,''
+ \item \textbf{Key point:} staments can be \textbf{true} or
+                     \textbf{false}
+\end{itemize}
+\end{frame}
+
+%\begin{frame}[plain]
+%\begin{center}
+%\includegraphics[scale=0.4]{xkcd169.png}
+%https://xkcd.com/169/
+%\end{center}
+%\end{frame}
+
+
+\section{Logical operations}
+
+\begin{frame}{Logical operations}
+\begin{itemize}
+\item We can combine statements to make new ones
+\item Negation (\textbf{not}), conjunction (\textbf{and}), disjunction
+      (\textbf{or})
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Negation (\textbf{not})}
+\begin{center}
+If $A$ is a statement, the statement ``not $A$'' (in symbols: $\neg A$) is
+\textbf{true} when $A$ is \textbf{false}, and it is \textbf{false} when $A$ is
+\textbf{true}.
+\pause
+\end{center}
+
+\begin{example}
+\begin{center}
+$\neg (3>4)$ is equivalent to $3\leq 4$
+
+``\emph{$3$ is \textbf{not} greater than $4$}'' is equivalent to
+``\emph{$3$ is less or equal than $4$}''
+\end{center}
+\end{example}
+\end{frame}
+
+\begin{frame}{Conjunction (\textbf{and})}
+\begin{center}
+The statement ``$A$ and $B$'' (in symbols:
+$A\land B$) is \textbf{true} when both $A$ and $B$ are \textbf{true}, and it is
+\textbf{false} if at \emph{at least} one of them is \textbf{false}.
+\pause
+
+\begin{example}
+``$(3<4)\land (5$ is an odd number$)$'' is \textbf{true}
+\end{example}
+
+\begin{example}
+``(Today is Monday) $\land$ (we are in France)'' is \textbf{false}
+\end{example}
+\end{center}
+
+\end{frame}
+
+\begin{frame}{Disjunction (\textbf{or})}
+\begin{center}
+The statement ``$A$ or $B$'' (in symbols:
+$A\lor B$) is \textbf{true} when at least one of $A$ and $B$ is \textbf{true},
+and it is \textbf{false} if both of them are \textbf{false}.
+\pause
+
+\begin{example}
+``$(3=4)\lor (5$ is an even number$)$'' is \textbf{false}
+\end{example}
+
+\begin{example}
+``(Today is Monday) $\lor$ (we are in Luxembourg)'' is \textbf{true}
+\end{example}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}{Logical operations}
+\begin{itemize}
+  \item \textbf{Important:} $\lor$ is always \emph{inclusive}:
+   \pause
+
+\begin{center}
+\begin{example}[Another bad joke]
+Waiter: ``Would you like cheese or dessert?''
+
+Mathematician: ``Yes.''
+\end{example}
+\end{center}
+\pause
+ \item $\neg$ has precedence over $\land$ and $\lor$:
+    \begin{align*}
+      \neg A\land B \text{ means } (\neg A)\land B,\qquad
+      \neg A\lor B \text{ means } (\neg A)\lor B
+    \end{align*}
+    (or just use parenthesis)
+\end{itemize}
+
+
+\end{frame}
+
+\begin{frame}{Properties}
+  \begin{center}
+    If $A$, $B$ and $C$ are statements:
+  \end{center}
+  {\fontsize{9}{17}\selectfont
+  \begin{align*}
+    \begin{array}{cc|c}
+      A\land B = B\land A & A \lor B = B\lor A &\textbf{commutativity}\\
+      \hline
+      A\land (B\land C) = (A\land B)\land C \quad &
+      A\lor (B\lor C) = (A\lor B)\lor C & \textbf{associativity}\\
+      \hline
+      A\land(B\lor C) = (A\land B)\lor(A\land C) & & \textbf{distributivity} \\
+      A\lor(B\land C) = (A\lor B)\land(A\lor C) & &\textbf{distributivity*}  \\
+      \hline
+      \neg(\neg A) = A & & \textbf{double negation} \\
+      \hline
+      A \land \textbf{true} = A & A \land \textbf{false} = \textbf{false} \\
+      A\lor \textbf{true} = \textbf{true} & A \lor \textbf{false} = A \\
+      (\neg A) \land A = \textbf{false} & (\neg A) \lor A = \textbf{true} \\
+      \hline
+      \neg (A\land B) = (\neg A)\lor (\neg B) &
+      \neg (A\lor B) = (\neg A)\land (\neg B) & \textbf{De Morgan's laws}
+    \end{array}
+  \end{align*}}
+\end{frame}
+
+\subsection{Boolean algebra}
+
+\begin{frame}{Boolean algebra}
+  \begin{itemize}
+    \item For simplicity: \textbf{true}\,$=1$, \textbf{false}\,$=0$
+    \pause \item We have a set $\{0,1\}$ with some operations
+                 $(\land,\lor,\neg)$
+    \pause \item This is called a \textbf{Boolean algebra}
+  \end{itemize}
+\end{frame}
+
+\subsection{Truth tables}
+
+\begin{frame}{Truth tables}
+  A compact way of describing an operator, or a composition of operators
+  \pause
+  \vspace{4pt}
+  Example:
+\begin{align*}
+  \begin{array}{|c|c|c|c|c|c|}
+    \hline
+    A & B & \neg A & A\land B & A\lor B & (A\lor B)\land (\neg A)  \\
+    \hline
+    0 & 0 & 1 & 0 & 0 & 0 \\
+    0 & 1 & 1 & 0 & 1 & 1 \\
+    1 & 0 & 0 & 0 & 1 & 0 \\
+    1 & 1 & 0 & 1 & 1 & 0 \\
+    \hline
+  \end{array}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Truth tables}
+  \begin{center}
+    We can check that two statements are equivalent with truth tables
+  \end{center}
+\begin{align*}
+  \begin{array}{|c|c|c|c|}
+    \hline
+    A & B & \neg(A\land B) & (\neg A)\lor (\neg B)\\
+    \hline
+    0 & 0 & 1 & 1 \\
+    0 & 1 & 1 & 1 \\
+    1 & 0 & 1 & 1 \\
+    1 & 1 & 0 & 0 \\
+    \hline
+  \end{array}
+\end{align*}
+\end{frame}
+
+
+\section{Implication}
+
+\begin{frame}{Implication}
+  \begin{itemize}
+  \item ``$A\implies B$'' means \emph{``If $A$ (is true), then $B$ (is true)''}
+  \end{itemize}
+  \pause
+  \begin{example}
+    \emph{``If it rains, I will bring an umbrella''}
+
+    (It rains)$\implies$(I will bring an umbrella)
+  \end{example}
+  \pause
+  \begin{example}
+    \emph{``If my grandpa had wheels, he would be a bike''}
+
+    (My grandpa has wheels)$\implies$(My grandpa is a bike)
+  \end{example}
+\end{frame}
+
+
+\begin{frame}{Implication}
+    \begin{itemize}
+    \item It is a logical operation: ``$A\implies B$'' means ``$B\lor(\neg A)$''
+      \pause
+    \end{itemize}
+  \begin{align*}
+    \begin{array}{|c|c|c|c|}
+      \hline
+      A & B & A\implies B & \\
+      \hline
+      0 & 0 & 1 & \text{No rain, I don't bring an umbrella} \\
+      \hline
+      0 & 1 & 1 & \text{No rain, I bring an umbrella anyway} \\
+      \hline
+      1 & 0 & 0 & \text{It rains, I don't bring an umbrella} \\
+      \hline
+      1 & 1 & 1 & \text{It rains, I bring an umbrella} \\
+      \hline
+    \end{array}
+  \end{align*}
+  \pause
+  \begin{remark}
+    ``\textbf{false} $\implies A$'' is always \textbf{true}, whatever $A$ is
+    (\emph{ex falso quodlibet})
+    ``$A\implies$\textbf{true}'' is always true, whatever $A$ is
+  \end{remark}
+\end{frame}
+
+
+\begin{frame}{Notation}
+  Sometimes we use the following symbols:
+  \begin{itemize}
+    \item ``$A\impliedby B$'' is the same as ``$B\implies A$''
+    \item ``$A\iff B$ is the same as ``$(A\implies B)\land (B\implies A)$''.\\
+        It is read ``$A$ is equivalent to $B$'' or ``$A$ if and only if $B$''.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Contrapositive}
+  \begin{itemize}
+    \item The statement $(\neg B)\implies (\neg A)$ is called
+          \emph{contrapositive} of $A\implies B$
+    \pause
+    \item It is equivalent to ``$A\implies B$''
+    \pause
+    \item Two proofs:
+      \begin{enumerate}
+        \item Properties of logical operations
+        \item Truth tables
+      \end{enumerate}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{End of part 1}
+  See you tomorrow!
+
+  \refgithub
+\end{frame}
+
+\section{Quantifiers}
+
+\begin{frame}{Quantifiers}
+  Let $S$ be a set and let $A(x)$ be a ``variable statement'' that depends on
+  $x\in S$ (for example $S=\mathbb{N}$ and $A(x)=$``x is an even number'').
+  \pause
+
+  \begin{itemize}
+    \item \textbf{Universal quantifier} ($\forall$ or ``for all''):
+          ``$\forall x\in S,\,A(x)$'' means that if we replace $x$ with any
+          element of $S$, $A(x)$ is always \textbf{true}.
+    \item \textbf{Existential quantifier} ($\exists$ or ``there exists''):
+          ``$\exists x\in S,\, A(x)$'' means that $A(x)$ is \textbf{true} for
+          at least one value of $x$ is $S$.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Quantifiers - examples}
+  \begin{example}
+  $S=$``the set of all cars'', $A(x)$=``$x$ is red''
+
+  $\forall x\in S,\, A(X)$ is \textbf{false}.
+
+  $\exists x\in S,\, A(X)$ is \textbf{true}.
+  \end{example}
+  \begin{example}
+    $S=\mathbb{N}$, $A(x)=x>5$
+
+  $\forall x\in S,\, A(x)$ is \textbf{false}.
+
+  $\exists x\in S,\, A(X)$ is \textbf{true}.
+  \end{example}
+\end{frame}
+
+\begin{frame}{Negation of quantifiers}
+  \begin{center}
+    \textbf{Today's most important fact:}
+  \end{center}
+  \begin{align*}
+    \neg(\forall x\in S,\, A(x))&=\only<1>{\quad?}
+    \onslide<2->{\exists x\in S,\,\neg A(x)}\\
+    \neg(\exists x\in S,\, A(x))&=\only<1-2>{\quad?}
+    \onslide<3->{\forall x\in S,\,\neg A(x)}\\
+  \end{align*}
+  \pause
+  \begin{example}
+    \begin{center}
+  $\neg$``every number is even'' = ``there is at least one odd number''
+    \end{center}
+  \end{example}
+\end{frame}
+
+\begin{frame}
+  (exercise)
+\end{frame}
+
+\section{Proofs}
+
+\begin{frame}{Proofs}
+  \begin{itemize}
+    \item A proof is a sequence of statements, each one logically deriving from
+          the previous.
+          \pause
+    \item Proofs are used to derive new statements from statements that are
+          known to be true.
+          \pause
+    \item If $A$ is known to be true and the implication $A\implies B$ is
+          logically clear, then also $B$ must be true.
+          \pause
+    \item Every mathematical theorem must be justified with a proof.
+  \end{itemize}
+\end{frame}
+
+\subsection{Direct proofs}
+\begin{frame}{Example: direct proof}
+  \begin{theorem}
+    The sum of two even numbers is even.
+  \end{theorem}
+  \pause
+  \begin{proof}
+    \begin{enumerate}
+  \item Recall the definition: a natural number $x$ is called \emph{even}
+        if there is some natural number $n$ such that $x=2n$.
+    \pause
+  \item If $x$ and $y$ are even numbers, then there are natural numbers $n$
+    and $m$ such that $x=2n$ and $y=2m$.
+    \pause
+  \item Then $x+y=2n+2m=2(n+m)$.
+    \pause
+  \item Then $x+y$ is even.
+    \end{enumerate} 
+  \end{proof}
+\end{frame}
+
+
+\subsection{Proofs by contradiction}
+
+\begin{frame}{Proofs by contradiction}
+  Idea: I want to show $A=\textbf{true}$. I show that the implication
+  ``$(\neg A)\implies\textbf{false}$'' is \textbf{true}.
+  Then $\neg A=\textbf{false}$, so $A=\textbf{true}$.
+  \pause
+\begin{definition}
+  A natural number is called \emph{prime} if it is different from $1$ and it
+  is only divisible by $1$ and itself.
+\end{definition}
+  \begin{theorem}
+    There are infinitely many prime numbers.
+  \end{theorem}
+
+\end{frame}
+
+\begin{frame}{Proofs by contradiction}
+  \begin{theorem}
+    There are infinitely many prime numbers.
+  \end{theorem}
+  \pause
+  \begin{proof}
+    \begin{enumerate}
+    \item Assume that there are only finitely many prime numbers.
+    \pause
+    \item So there are $n$ prime numbers, for some number $n$.
+          Call them $p_1,p_2,\dots,p_n$.
+    \pause
+    \item Let $u=p_1\times p_2\times \dots \times p_n +1$.
+    \pause
+    \item $u$ is not divisible by any of the prime numbers $p_1,\dots,p_n$.
+    \pause
+    \item Therefore $u$ is only divisible by $1$ and itself. So $u$ is prime.
+    \pause
+    \item So $p_1,\dots,p_n$ are not the only prime numbers.
+    \end{enumerate}
+  \end{proof}
+
+\end{frame}
+
+
+\subsection{Proofs by induction}
+
+\begin{frame}{Proofs by induction}
+  If I want to prove $\forall n\in \mathbb N,\, A(n)$:
+  \begin{enumerate}
+    \item Prove $A(0)$ (\emph{base step})
+    \item Prove $\forall n\in \mathbb N,\, (A(n)\implies A(n+1))$
+    (\emph{inductive step})
+  \end{enumerate}
+  \pause
+  \begin{theorem}[Sum of natural numbers]
+    $\forall n\in \mathbb N,\quad 0+1+\cdots + n=\frac{n(n+1)}{2}$
+  \end{theorem}
+
+\end{frame}
+
+
+\begin{frame}
+  \begin{proof}
+  \begin{enumerate}
+  \item Base case: $0=0$.
+    \pause
+  \item Let $n$ be any natural number.
+    \pause
+      
+      If $A(n)=\textbf{false}$, then $A(n)\implies A(n+1)$ is \textbf{true}.
+      \pause
+
+      If $A(n)=\textbf{true}$, we have to show that $A(n+1)=\textbf{true}$.
+      \pause
+      
+      \begin{align*}
+        \begin{array}{rlr}
+          0+\cdots +(n+1)& = (0+\cdots+ n)+(n+1)=\\
+          & = \frac{n(n+1)}{2}+(n+1)= & \text{since }A(n)=\textbf{true}\\
+          & = \frac{n^2+n+2n+2}{2}\\
+          & = \frac{(n+1)(n+2)}{2}
+        \end{array}
+      \end{align*}
+      so $A(n+1)=\textbf{true}$
+
+  \end{enumerate}
+  \end{proof}
+\end{frame}
+
+\end{document}
