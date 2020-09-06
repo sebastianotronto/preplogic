@@ -1,10 +1,5 @@
 \beamer@sectionintoc {1}{Statements}{3}{0}{1}
 \beamer@sectionintoc {2}{Logical operations}{11}{0}{2}
-\beamer@subsectionintoc {2}{1}{Boolean algebra}{22}{0}{2}
-\beamer@subsectionintoc {2}{2}{Truth tables}{25}{0}{2}
 \beamer@sectionintoc {3}{Implication}{28}{0}{3}
-\beamer@sectionintoc {4}{Quantifiers}{39}{0}{4}
-\beamer@sectionintoc {5}{Proofs}{46}{0}{5}
-\beamer@subsectionintoc {5}{1}{Direct proofs}{50}{0}{5}
-\beamer@subsectionintoc {5}{2}{Proofs by contradiction}{55}{0}{5}
-\beamer@subsectionintoc {5}{3}{Proofs by induction}{64}{0}{5}
+\beamer@sectionintoc {4}{Quantifiers}{40}{0}{4}
+\beamer@sectionintoc {5}{Proofs}{47}{0}{5}
