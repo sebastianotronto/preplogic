@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1599409436 "preplogic-slides.tex" "preplogic-slides.pdf" "preplogic-slides" 1599409441
+["pdflatex"] 1599412181 "preplogic-slides.tex" "preplogic-slides.pdf" "preplogic-slides" 1599412185
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1594687104 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map" 1594687104 4851843 f8aac22e46e9a458223e5c13b1e20998 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1594687104 1004 54797486969f23fa377b128694d548df ""
@@ -204,17 +204,17 @@
   "/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty" 1594687104 55589 34128738f682d033422ca125f82e5d62 ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1597672114 39446 755423e82e7afb756f49b242a15f4ec2 ""
   "/usr/share/texmf-var/web2c/pdftex/pdflatex.fmt" 1598712773 2434818 64d78922a5d2a9baf6bf1beec95a9374 ""
-  "preplogic-slides.aux" 1599409440 6068 50b72b0885ae780ffcd7f1e76f21d7ac "pdflatex"
-  "preplogic-slides.nav" 1599409440 3672 7a02b80ee1eb79ed6628b6b44b98f41e "pdflatex"
-  "preplogic-slides.out" 1599409440 231 deb4a29a1afc0897b65a37cc63a87407 "pdflatex"
-  "preplogic-slides.tex" 1599409430 13551 0585e4bf0bb5c04ed9dea539aaf36342 ""
-  "preplogic-slides.toc" 1599409440 240 82b64b5af661cb4f9fe5c48ed162b693 "pdflatex"
+  "preplogic-slides.aux" 1599412185 6068 0cd160fad86cda8453c8a27f21ba7a8b "pdflatex"
+  "preplogic-slides.nav" 1599412185 3672 0800028632c9a7b0abd7c91d24b51be9 "pdflatex"
+  "preplogic-slides.out" 1599412185 231 deb4a29a1afc0897b65a37cc63a87407 "pdflatex"
+  "preplogic-slides.tex" 1599412180 14004 9f55841449bbd22b45df126f77402832 ""
+  "preplogic-slides.toc" 1599412185 240 128cdf304ee282775db2a41da35e3a3e "pdflatex"
   "unilu.jpg" 1554272896 41957 a77f6a50964dc93c1a7378a3852a421d ""
   (generated)
-  "preplogic-slides.nav"
   "preplogic-slides.toc"
-  "preplogic-slides.aux"
-  "preplogic-slides.out"
   "preplogic-slides.snm"
+  "preplogic-slides.out"
+  "preplogic-slides.aux"
+  "preplogic-slides.nav"
   "preplogic-slides.pdf"
   "preplogic-slides.log"

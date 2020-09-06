@@ -3,11 +3,12 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
+\usepackage[top=2cm]{geometry}
 
 \theoremstyle{definition} \newtheorem{exercise}{Exercise}[section]
 
-\author{Sebastiano Tronto (uni.lu)}
-\title{Elementary logic exercises (Prep Camp 2020)}
+\author{Sebastiano Tronto (\texttt{sebastiano.tronto@uni.lu})}
+\title{Elementary Logic exercises (Prep Camp 2020)}
 
 \begin{document}
 \maketitle
@@ -15,7 +16,7 @@
 \section{Logical operations}
 
 \begin{exercise}
-  Determine if the following statement are \textbf{true} or \textbf{false}:
+  Determine if the following statements are \textbf{true} or \textbf{false}:
   \begin{enumerate}
     \item ``Today is Tuesday or Germany has more inhabitants than Luxembourg''
     \item ``$7$ is odd and $2+2=5$''
@@ -84,27 +85,62 @@ here}'' ?
 \section{Quantifiers}
 
 \begin{exercise}
+  Write the negation of the following statements:
+  \begin{enumerate}
+    \item $\exists x\in \mathbb N,\, x^2-2=0$
+    \item ``Every prime number is odd''
+    \item ``Every person I have met likes pizza''
+    \item ``There is at least one number greater than $7$''
+    \item $\forall x\in \mathbb N,\,x\geq 0$
+    \item $\forall x\in \mathbb Z,\,(\exists y\in\mathbb Z,\,x+y=0)$
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
   There is another quantifier that we did not cover in the lecture, namely
   $\exists!$ (read ``there exists exactly one''). For example, the sentence
   ``\emph{there exists exactly one natural number x such that x+2=5}'' can be
-  written in symbols as ``$\exists!x\in \mathbb N,\,x+2=5$.
+  written in symbols as ``$\exists!x\in \mathbb N,\,x+2=5$''.
+
   In this exercise, your task is to give a formal definition of this quantifier
   using the logical symbols that we have defined in class. In particular, you
   will need the following:
   \begin{itemize}
-    \item the universal ($\forall$) and existential ($\exists$) quantifier
+    \item the universal ($\forall$) and existential ($\exists$) quantifiers
     \item the conjunction $\land$
     \item the implication $\implies$
   \end{itemize}
   Moreover, you will need the equality symbol $=$ between two elements of a set
   (if $a$ and $b$ are two elements of the same set, ``$a=b$'' is a mathematical
-  statement and it is \textbf{true} if and only if they are the same element).
+  statement and it is \textbf{true} if and only if $a$ and $b$ are the same
+  element).
   
   \emph{Warning: your definition must depend on a set $S$ and on a ``variable
   statement'' $A(x)$, as the existential and universal quantifiers.}
 \end{exercise}
 
 \section{Proofs}
+
+\begin{exercise}
+  Prove by induction that
+  \begin{align*}
+    \forall n\in\mathbb N,\quad \sum_{k=1}^n(2k-1)=n^2
+  \end{align*}
+    (here $\sum_{k=1}^n(2k-1)$ means $1+3+5+\cdots+ (2n-1)$).
+\end{exercise}
+
+\begin{exercise}
+  If $n\in \mathbb N$ the \emph{factorial} of $n$, denoted by $n!$ is defined
+  as follows:
+  \begin{align*}
+    n!=\begin{cases}
+      1&\text{if } n=0,\\
+      n\times (n-1)! & \text{if } n> 0.
+    \end{cases}
+  \end{align*}
+  Prove by induction that if $n\geq 4$ then $n!\geq 2^n$.
+\end{exercise}
+
 
 \begin{exercise}
   Is the following statement true or false? Give a proof of your answer.

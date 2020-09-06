@@ -350,7 +350,7 @@ Mathematician: ``Yes.''
 
   \begin{itemize}
     \item \textbf{Universal quantifier} ($\forall$ or ``for all''):
-          ``$\forall x\in S,\,A(x)$'' means that if we replace $x$ with any
+          ``$\forall x\in S,\,A(x)$'' means that if we replace ``$x$'' with any
           element of $S$, $A(x)$ is always \textbf{true}.
     \item \textbf{Existential quantifier} ($\exists$ or ``there exists''):
           ``$\exists x\in S,\, A(x)$'' means that $A(x)$ is \textbf{true} for
@@ -385,16 +385,21 @@ Mathematician: ``Yes.''
     \neg(\exists x\in S,\, A(x))&=\only<1-2>{\quad?}
     \onslide<3->{\forall x\in S,\,\neg A(x)}\\
   \end{align*}
-  \pause
+  \onslide<2->{
   \begin{example}
     \begin{center}
   $\neg$``every number is even'' = ``there is at least one odd number''
     \end{center}
   \end{example}
-\end{frame}
-
-\begin{frame}
-  (exercise)
+  }
+  \onslide<3->{
+  \begin{example}
+    \begin{center}
+    $\neg$``$\exists x\in \mathbb N,\, x+3=9$'' =
+    ``$\forall x\in \mathbb N,\, x+3\neq 9$''
+    \end{center}
+  \end{example}
+  }
 \end{frame}
 
 \section{Proofs}
@@ -522,5 +527,17 @@ Mathematician: ``Yes.''
   \end{enumerate}
   \end{proof}
 \end{frame}
+
+\begin{frame}{The end}
+  What you have learned in this course:
+  \begin{itemize}
+    \item Basic logic operations and logic implication
+    \item Quantifiers and \textbf{their negation}
+    \item Some basic mathematical proofs
+  \end{itemize}
+  \vspace{10pt}
+  \refgithub
+\end{frame}
+
 
 \end{document}

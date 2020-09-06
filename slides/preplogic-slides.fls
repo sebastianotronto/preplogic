@@ -449,9 +449,9 @@ INPUT unilu.jpg
 INPUT ./unilu.jpg
 INPUT unilu.jpg
 INPUT ./unilu.jpg
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
 INPUT unilu.jpg
 INPUT ./unilu.jpg
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
 INPUT unilu.jpg
 INPUT ./unilu.jpg
 INPUT unilu.jpg
