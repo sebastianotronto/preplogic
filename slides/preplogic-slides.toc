@@ -2,4 +2,4 @@
 \beamer@sectionintoc {2}{Logical operations}{11}{0}{2}
 \beamer@sectionintoc {3}{Implication}{28}{0}{3}
 \beamer@sectionintoc {4}{Quantifiers}{40}{0}{4}
-\beamer@sectionintoc {5}{Proofs}{46}{0}{5}
+\beamer@sectionintoc {5}{Proofs}{47}{0}{5}
