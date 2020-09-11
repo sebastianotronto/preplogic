@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1599547213 "preplogic-slides.tex" "preplogic-slides.pdf" "preplogic-slides" 1599547216
+["pdflatex"] 1599815546 "preplogic-slides.tex" "preplogic-slides.pdf" "preplogic-slides" 1599815549
   "/etc/texmf/web2c/texmf.cnf" 1538037709 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
@@ -201,17 +201,17 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1556268315 2498019 afad6a2aaa78d153b1d838814ac14e00 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1553505671 4131933 9c912dd4c7f439cb8b40127b9b4a2f38 ""
-  "preplogic-slides.aux" 1599547215 6068 2f0cc67bdd50708d140d2e9bc09f8405 ""
-  "preplogic-slides.nav" 1599547215 3672 467051a347cacc5af16126018a801fe6 ""
-  "preplogic-slides.out" 1599547215 231 deb4a29a1afc0897b65a37cc63a87407 ""
-  "preplogic-slides.tex" 1599547212 14092 f64cd262a08bbc958a70d23b2d3ed4d4 ""
-  "preplogic-slides.toc" 1599547215 240 82b64b5af661cb4f9fe5c48ed162b693 ""
+  "preplogic-slides.aux" 1599815549 6068 2f0cc67bdd50708d140d2e9bc09f8405 ""
+  "preplogic-slides.nav" 1599815549 3672 467051a347cacc5af16126018a801fe6 ""
+  "preplogic-slides.out" 1599815549 231 deb4a29a1afc0897b65a37cc63a87407 ""
+  "preplogic-slides.tex" 1599815542 14092 3c16e3328c2a1c52359574a1cf12eecc ""
+  "preplogic-slides.toc" 1599815549 240 82b64b5af661cb4f9fe5c48ed162b693 ""
   "unilu.jpg" 1554272896 41957 a77f6a50964dc93c1a7378a3852a421d ""
   (generated)
-  "preplogic-slides.log"
-  "preplogic-slides.aux"
   "preplogic-slides.toc"
-  "preplogic-slides.nav"
   "preplogic-slides.snm"
-  "preplogic-slides.pdf"
+  "preplogic-slides.aux"
   "preplogic-slides.out"
+  "preplogic-slides.pdf"
+  "preplogic-slides.nav"
+  "preplogic-slides.log"
