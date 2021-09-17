@@ -1,0 +1,306 @@
+\documentclass[a4paper,oneside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[top=2cm]{geometry}
+
+\theoremstyle{definition} \newtheorem{exercise}{Exercise}[section]
+
+\author{Sebastiano Tronto (\texttt{sebastiano.tronto@uni.lu})}
+\title{Elementary Logic exercises (Prep Camp 2020)}
+
+\begin{document}
+\maketitle
+
+\section{Logical operations}
+
+\begin{exercise}
+  Determine if the following statements are \textbf{true} or \textbf{false}:
+  \begin{enumerate}
+    \item ``Today is Tuesday or Germany has more inhabitants than Luxembourg''
+    \item ``$7$ is odd and $2+2=5$''
+    \item Every number of the form $2^{2^n}+1$, for $n=1,2,3...$, is prime.
+  \end{enumerate}
+\end{exercise}
+\begin{proof}[Solution]
+  \begin{enumerate}
+    \item \textbf{True}: regardless of when you solve this exercise, Germany
+          has more inhabitants than Luxembourg.
+    \item \textbf{True}
+    \item \textbf{False}: the number $2^{2^5}+1=4294967297=641\times 6700417$
+          is not prime.
+  \end{enumerate}
+\end{proof}
+
+\begin{exercise}
+  What is the negation of the sentence ``\emph{I payed attention in class and I
+  did not do my homework}'' ?
+\end{exercise}
+\begin{proof}[Solution]
+  ``\emph{I did not pay attention in class \textbf{or} I did my homework}''
+\end{proof}
+
+\begin{exercise}
+  Simplify the following logical expressions using the properties of logical
+  operations (where $A,B$ and $C$ are statements):
+  \begin{enumerate}
+    \item $A\land(A\lor B)$
+    \item $A\lor (B\land A)$
+    \item $(A\lor B) \land \neg A$
+    \item $A \lor (\neg A\land B)$
+    \item $(\neg (A\lor \neg B))\land ((A\lor C) \land \neg C)$
+  \end{enumerate}
+\end{exercise}
+\begin{proof}[Solution]
+  They are equivalent to the following (you can check with truth tables):
+  \begin{enumerate}
+    \item $A$
+    \item $A$
+    \item $B\land \neg A$
+    \item $A\lor B$
+    \item Let's do this one in more steps:
+      \begin{align*}
+        (\neg (A\lor \neg B))\land ((A\lor C) \land \neg C)=
+        &(\neg A\land B)\land ((A\lor C)\land \neg C)=\\
+        =&(\neg A\land B)\land ((A\land \neg C)\lor (C\land \neg C))=\\
+        =&(\neg A\land B)\land ((A\land \neg C)\lor \textbf{false})=\\
+        =&(\neg A\land B)\land (A\land \neg C)=\\
+        =&A\land \neg A\land B\land \neg C=\\
+        =&\textbf{false}
+      \end{align*}
+  \end{enumerate}
+\end{proof}
+
+\section{Implication}
+
+\begin{exercise}
+  Fill in the following truth table:
+  \begin{align*}
+    \begin{array}{|c|c|c|c|c|}
+      \hline
+      A & B & C & \neg(A\implies B) & (A\implies B) \implies C \\
+      \hline
+      0 & 0 & 0 & 0 & 0 \\
+      \hline
+      0 & 0 & 1 & 0 & 1 \\
+      \hline
+      0 & 1 & 0 & 0 & 0 \\
+      \hline
+      0 & 1 & 1 & 0 & 1 \\
+      \hline
+      1 & 0 & 0 & 1 & 1 \\
+      \hline
+      1 & 0 & 1 & 1 & 1 \\
+      \hline
+      1 & 1 & 0 & 0 & 0 \\
+      \hline
+      1 & 1 & 1 & 0 & 1 \\
+      \hline
+    \end{array}
+  \end{align*}
+\end{exercise}
+
+\begin{exercise}[Transitivity]
+  Prove that the following statement is true for any statements $A,B$ and $C$:
+  \begin{align*}
+    ((A\implies B)\land (B\implies C))\implies (A\implies C)
+  \end{align*}
+\end{exercise}
+\begin{proof}[Solution]
+  Let's rewrite the first part in terms of basic logical operations:
+  \begin{align*}
+    (A\implies B)\land (B\implies C)=&(B\lor \neg A)\land(C\lor \neg B)
+  \end{align*}
+  now we can write a truth table for the two parts
+  \begin{align*}
+    \begin{array}{|c|c|c|c|c|}
+      \hline
+      A & B & C & (B\lor\neg A)\land(C\lor\neg B) & A\implies C \\
+      \hline
+      0 & 0 & 0 & 1 & 1 \\
+      \hline
+      0 & 0 & 1 & 1 & 1 \\
+      \hline
+      0 & 1 & 0 & 0 & 1 \\
+      \hline
+      0 & 1 & 1 & 1 & 1 \\
+      \hline
+      1 & 0 & 0 & 0 & 0 \\
+      \hline
+      1 & 0 & 1 & 0 & 1 \\
+      \hline
+      1 & 1 & 0 & 0 & 0 \\
+      \hline
+      1 & 1 & 1 & 1 & 1 \\
+      \hline
+    \end{array}
+  \end{align*}
+  With the help of the truth table we see that whenever the first part
+  ``$(\neg (A\lor \neg B))\land ((A\lor C) \land \neg C)$'' is true, also the
+  implication ``$A\implies C$'' is true. This shows that the ``big
+  implication'' is true. (If you are not convinced, you can add more details to
+  this proof, for example by writing more truth tables.)
+\end{proof}
+
+\begin{exercise}
+What is the contrapositive of ``\emph{If this table is not reserved, we sit
+here}'' ?
+\end{exercise}
+\begin{proof}[Solution]
+  ``\emph{If we do not sit here, this table is reserved}''. One could also say
+  this in another way, for example ``\emph{We do not sit here because this
+  table is reserved}''.
+\end{proof}
+
+\section{Quantifiers}
+
+\begin{exercise}
+  Write the negation of the following statements:
+  \begin{enumerate}
+    \item $\exists x\in \mathbb N,\, x^2-2=0$
+    \item ``Every prime number is odd''
+    \item ``Every person I have met likes pizza''
+    \item ``There is at least one number greater than $7$''
+    \item $\forall x\in \mathbb N,\,x\geq 0$
+    \item $\forall x\in \mathbb Z,\,(\exists y\in\mathbb Z,\,x+y=0)$
+  \end{enumerate}
+\end{exercise}
+\begin{proof}[Solution]
+  \begin{enumerate}
+    \item $\forall x\in\mathbb N,\, x^2-2\neq 0$
+    \item ``There is at least one prime number which is even''
+    \item ``I have met at least one person that does not like pizza''
+    \item ``Every number is less or equal than $7$''
+    \item $\exists x\in\mathbb N,\, x<0$
+    \item $\exists x\in \mathbb Z,\, (\forall y\in \mathbb Z,\, x+y\neq 0)$
+  \end{enumerate}
+\end{proof}
+
+\begin{exercise}
+  There is another quantifier that we did not cover in the lecture, namely
+  $\exists!$ (read ``there exists exactly one''). For example, the sentence
+  ``\emph{there exists exactly one natural number x such that x+2=5}'' can be
+  written in symbols as ``$\exists!x\in \mathbb N,\,x+2=5$''.
+
+  In this exercise, your task is to give a formal definition of this quantifier
+  using the logical symbols that we have defined in class. In particular, you
+  will need the following:
+  \begin{itemize}
+    \item the universal ($\forall$) and existential ($\exists$) quantifiers
+    \item the conjunction $\land$
+    \item the implication $\implies$
+  \end{itemize}
+  Moreover, you will need the equality symbol $=$ between two elements of a set
+  (if $a$ and $b$ are two elements of the same set, ``$a=b$'' is a mathematical
+  statement and it is \textbf{true} if and only if $a$ and $b$ are the same
+  element).
+  
+  \emph{Warning: your definition must depend on a set $S$ and on a ``variable
+  statement'' $A(x)$, as the existential and universal quantifiers.}
+\end{exercise}
+\begin{proof}[Solution]
+  The idea is that we want to write ``\emph{there is $x\in S$ such that $A(x)$
+  is true, \textbf{and}, for any other $y\in S$, $A(y)$ is false}. From this 
+  we see that the structure of the statement is
+  \begin{align*}
+    \exists x\in S,\,(\text{``something''}\land\text{``something else''})
+  \end{align*}
+  The ``something'' part is just $A(x)$. The ``something else'' part can be
+  written in different ways, for example
+  \begin{align*}
+    \forall y\in S,\,(y\neq x\implies \neg A(y)) \quad \text{or}
+    \quad \forall y\in S,\,(A(y)\implies y=x)
+  \end{align*}
+  (notice that the two implications above are one the contrapositive of the
+  other); or also
+  \begin{align*}
+    \forall y\in S\setminus \{x\},\, \neg A(y)
+  \end{align*}
+  So in conclusion, one way to define ``$\exists!$'' is the following:
+  \begin{align*}
+    \exists!x\in S,\,A(x)\quad:=\quad\exists x\in S,\,(A(x)\land
+    (\forall y\in S,\,(A(y)\implies y=x)))
+  \end{align*}
+    
+\end{proof}
+
+\section{Proofs}
+
+\begin{exercise}
+  Prove by induction that
+  \begin{align*}
+    \forall n\in\mathbb N,\quad \sum_{k=1}^n(2k-1)=n^2
+  \end{align*}
+    (here $\sum_{k=1}^n(2k-1)$ means $1+3+5+\cdots+ (2n-1)$).
+\end{exercise}
+\begin{proof}[Solution]
+  \textbf{Base case:} for $n=0$ the sum is empty, so we have $0=0$ which is
+  true. (If you do not think that the formula makes sense for $n=0$, you can do
+  prove it for $n\geq 1$ and fo $n=1$ as a base case.)
+
+  \textbf{Inductive step:} we can assume that the formula works for a generic
+  (but fixed) $n\in\mathbb N$ and prove that then it also works for $n+1$. So:
+  \begin{align*}
+    \sum_{k=1}^{n+1}(2k-1)&=\left(\sum_{k=1}^{n}(2k-1)\right)+2(n+1)-1=\\
+                          &=n^2 +2(n+1)-1=\\
+                          &=n^2+2n+1=\\
+                          &=(n+1)^2
+  \end{align*}
+  which is the formula for $n+1$.
+\end{proof}
+
+\begin{exercise}
+  If $n\in \mathbb N$ the \emph{factorial} of $n$, denoted by $n!$ is defined
+  as follows:
+  \begin{align*}
+    n!=\begin{cases}
+      1&\text{if } n=0,\\
+      n\times (n-1)! & \text{if } n> 0.
+    \end{cases}
+  \end{align*}
+  Prove by induction that if $n\geq 4$ then $n!\geq 2^n$.
+\end{exercise}
+\begin{proof}[Solution]
+  \textbf{Base case:} here the base case is $n=4$, and we have
+  $4!=24\geq 16=2^4$.
+
+  \textbf{Inductive step:} we can assume that the inequality is true for $n$,
+  and prove that it is also true for $n+1$. We have:
+  \begin{align*}
+    (n+1)!=(n+1)\times n!\geq (n+1)\times 2^n\geq 2^{n+1}
+  \end{align*}
+\end{proof}
+
+\begin{exercise}
+  Is the following statement true or false? Give a proof of your answer.
+  \begin{align*}
+    \forall n\in \mathbb N,\, n^2 -4n +5>n
+  \end{align*}
+\end{exercise}
+\begin{proof}[Solution]
+  The statement is \textbf{false}. Since it starts with a universal
+  quantifier, in order to prove that it is false we just need to provide one
+  example of $n\in \mathbb N$ which makes it false. In other words, we need to
+  prove that
+  \begin{align*}
+    \exists n\in \mathbb N,\, n^2-4n+5\leq n
+  \end{align*}
+  and a proof of this fact is very simple: for $n=2$ we have
+  $2^2-4\times 2+5=1\leq 2$.
+\end{proof}
+
+\begin{exercise}
+  Do the last point of Exercise 1.1 again, but this time give a proof of your
+  answer.
+\end{exercise}
+\begin{proof}[Solution]
+  Again, since we have to prove that the statement is false, we just need to
+  show one counterexample. for example, the number
+  $2^{2^5}+1=4294967297=641\times 6700417$ is not prime.
+\end{proof}
+
+
+
+
+\end{document}
